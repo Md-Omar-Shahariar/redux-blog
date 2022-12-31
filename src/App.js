@@ -1,12 +1,18 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Nav from "./components/Nav";
+import Search from "./components/Search";
 import Card from "./components/Card";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Nav></Nav>
+
+      {/* <!-- search --> */}
+      <Search></Search>
+
       <section class="relative bg-gray-50 pt-8 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-16 lg:px-8">
         <div class="absolute inset-0">
           <div class="bg-white h-1/3 sm:h-2/3"></div>
@@ -28,20 +34,7 @@ function App() {
       </section>
 
       {/* <!-- footer --> */}
-      <section class="pt-6">
-        <div class="max-w-7xl mx-auto px-5 py-6 lg:px-0 flex justify-between gap-2 border-t text-sm text-slate-400">
-          <div>Copyright 2022 Learn with Sumit.</div>
-          <div>
-            <a
-              href="https://youtube.com/learnwithsumit"
-              target="_blank"
-              rel="noreferrer"
-            >
-              YouTube Channel
-            </a>
-          </div>
-        </div>
-      </section>
+      <Footer></Footer>
     </div>
   );
 }
