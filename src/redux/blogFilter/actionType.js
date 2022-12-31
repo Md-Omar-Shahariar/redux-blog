@@ -1,4 +1,4 @@
-const SEARCHFILTER = "action/searchFilter";
-const CATEGORYFILTER = "action/categoryFilter";
-const AUTHORIMGFILTER = "action./authorImgFilter";
-const AUTHORFILTER = "action/authorFilter";
+export const SEARCHFILTER = "action/searchFilter";
+export const CATEGORYFILTER = "action/categoryFilter";
+export const AUTHORIMGFILTER = "action./authorImgFilter";
+export const AUTHORFILTER = "action/authorFilter";
