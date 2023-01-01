@@ -14,38 +14,40 @@ const Card = () => {
       .then((res) => res.json())
       .then((data) => setDataList(data));
   }, []);
+  const filterHandler = (dataList) => {
+    return dataList
+      .filter((data) => {
+        if (searchText) {
+          return data.title.toLowerCase().includes(searchText.toLowerCase());
+        }
+        return true;
+      })
+      .filter((data) => {
+        if (category) {
+          return data.category === category;
+        }
+        return true;
+      })
+      .filter((data) => {
+        if (Author) {
+          return data.Author === Author;
+        }
+        return true;
+      })
+      .filter((data) => {
+        if (AuthorImg) {
+          return data.AuthorImg === AuthorImg;
+        }
+        return true;
+      });
+  };
 
   return (
     <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
       {/* <!-- single card  --> */}
-      {dataList
-        .filter((data) => {
-          if (searchText) {
-            return data.title.toLowerCase().includes(searchText.toLowerCase());
-          }
-          return true;
-        })
-        .filter((data) => {
-          if (category) {
-            return data.category === category;
-          }
-          return true;
-        })
-        .filter((data) => {
-          if (Author) {
-            return data.Author === Author;
-          }
-          return true;
-        })
-        .filter((data) => {
-          if (AuthorImg) {
-            return data.AuthorImg === AuthorImg;
-          }
-          return true;
-        })
-        .map((data) => (
-          <SingleCard data={data}></SingleCard>
-        ))}
+      {filterHandler(dataList).map((data) => (
+        <SingleCard data={data}></SingleCard>
+      ))}
     </div>
   );
 };
