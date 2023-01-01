@@ -4,7 +4,9 @@ import { useSelector } from "react-redux";
 
 const Card = () => {
   const [dataList, setDataList] = useState([]);
-  const { searchText, category, Author } = useSelector((state) => state);
+  const { searchText, category, Author, AuthorImg } = useSelector(
+    (state) => state
+  );
   console.log(category);
 
   useEffect(() => {
@@ -32,6 +34,12 @@ const Card = () => {
         .filter((data) => {
           if (Author) {
             return data.Author === Author;
+          }
+          return true;
+        })
+        .filter((data) => {
+          if (AuthorImg) {
+            return data.AuthorImg === AuthorImg;
           }
           return true;
         })
