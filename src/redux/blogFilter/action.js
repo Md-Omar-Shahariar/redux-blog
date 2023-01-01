@@ -5,7 +5,7 @@ import {
   SEARCHFILTER,
 } from "./actionType";
 
-export const search = (searchText) => {
+export const searchByText = (searchText) => {
   return {
     type: SEARCHFILTER,
     payload: searchText,

@@ -1,5 +1,5 @@
 export const initialState = {
-  search: "",
+  searchText: "",
   category: "",
   Author: "",
   AuthorImg: "",

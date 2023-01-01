@@ -11,7 +11,7 @@ const blogFilterReducer = (state = initialState, action) => {
     case SEARCHFILTER:
       return {
         ...state,
-        search: action.payload,
+        searchText: action.payload,
       };
     case AUTHORFILTER:
       return {
