@@ -1,11 +1,8 @@
-import React, { useState } from "react";
 import search from "../assets/search.svg";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { searchByText } from "../redux/blogFilter/action";
 
 const Search = () => {
-  const [text, setText] = useState(" ");
-  const { searchText } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   let time;

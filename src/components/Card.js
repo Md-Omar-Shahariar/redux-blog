@@ -4,7 +4,8 @@ import { useSelector } from "react-redux";
 
 const Card = () => {
   const [dataList, setDataList] = useState([]);
-  const { searchText } = useSelector((state) => state);
+  const { searchText, category, Author } = useSelector((state) => state);
+  console.log(category);
 
   useEffect(() => {
     fetch("data.json")
@@ -19,6 +20,18 @@ const Card = () => {
         .filter((data) => {
           if (searchText) {
             return data.title.toLowerCase().includes(searchText.toLowerCase());
+          }
+          return true;
+        })
+        .filter((data) => {
+          if (category) {
+            return data.category === category;
+          }
+          return true;
+        })
+        .filter((data) => {
+          if (Author) {
+            return data.Author === Author;
           }
           return true;
         })

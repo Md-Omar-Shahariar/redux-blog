@@ -11,7 +11,7 @@ export const searchByText = (searchText) => {
     payload: searchText,
   };
 };
-export const author = (authorName) => {
+export const authorSearch = (authorName) => {
   return {
     type: AUTHORFILTER,
     payload: authorName,
